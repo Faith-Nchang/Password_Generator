@@ -22,20 +22,21 @@ def password_generator():
     password_special_characters = [random.choice(special_characters) for i in range(required_special_characters)]
 
 
-    # concatenates all generated letters, numbers, and characters
+     # concatenates all generated letters, numbers, and characters
     list = password_letters + password_numbers + password_special_characters
     random.shuffle(list)
 
     # converts characters to string
     password =' '.join([str(i) for i in list])
-    password = "Password: " + str((password))
+    password = str((password))
     password_string = StringVar()
     password_string.set(password)
 
+    l = Label(window, text="Generated Password: ", font=('Arial',10,'normal'), bg="black", fg="blue")
+    l.grid(row=5, column=0, columnspan=2)
     # displays the generated password
-    password_input = Label(window, textvariable=password_string, font=('Arial',10,'normal'), bg="black", fg="blue")
-    password_input.grid(row=5, column=0, padx=5, pady=5, columnspan=2)
-    password_input.bind("<Return>")
+    password_input = Label(window, textvariable = password_string, font=('Arial',10,'normal'), bg="black", fg="blue")
+    password_input.grid(row=6, column=0, columnspan=2)
 
 
 window = Tk()

@@ -3,5 +3,3 @@ generates a random password based on user's requirements
 
 ![Image](GUI screenshot.png)
 
-![Image](GUI screenshot.png)
-
